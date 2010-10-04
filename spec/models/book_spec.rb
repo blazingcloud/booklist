@@ -18,10 +18,10 @@ describe Book do
     Book.new(@invalid_attributes).should_not be_valid
   end
   
-  it "should not allow a null description" do
-    @invalid_attributes = @valid_attributes.clone
-    @invalid_attributes.delete(:description)
-    Book.new(@invalid_attributes).should_not be_valid
+  it "should have description as empty string by default" do
+    @valid_attributes.delete(:description)
+    book = Book.create!(@valid_attributes)
+    book.description.should == ""
   end
   
   it "should have a year as a number" do
