@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101004013514) do
+ActiveRecord::Schema.define(:version => 20101004122653) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
-    t.text     "description"
+    t.string   "description", :default => "", :null => false
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
