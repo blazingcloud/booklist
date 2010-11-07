@@ -25,6 +25,7 @@ describe BooksController do
     end
 
     it "should have a link to create a new book" do
+      pending
       visit root_path
       click_link "New Book"
       current_path.should == new_book_path
@@ -33,6 +34,7 @@ describe BooksController do
 
   describe "show page" do
     it "should display all the info about the book" do
+      pending
       @book = Book.first
       visit book_path(@book)
       page.should have_content(@book.title)
@@ -43,6 +45,7 @@ describe BooksController do
   end
 
   describe "new page" do
+    pending
     describe "should allow creation of a book" do
       before do
         visit new_book_path
@@ -63,6 +66,7 @@ describe BooksController do
     end
 
     it "should redirect to new page on failure" do
+      pending
       visit new_book_path
       fill_in("Year", :with => 1965)
       click_button('Create Book')
@@ -74,6 +78,7 @@ describe BooksController do
   end
   
   describe "edit page" do
+    pending
     describe "should allow use to edit book" do
       before do
         @book = Book.first
@@ -92,11 +97,12 @@ describe BooksController do
     end
 
     it "should redirect to edit page on failure" do
+      pending
       @book = Book.first
       visit edit_book_path(@book)
       fill_in("Year", :with => "")
       click_button('Update Book')
-      save_and_open_page
+      #save_and_open_page
       page.should have_xpath('//form/input', :value => "")
       page.should have_content("Sorry I couldn't save your book...")
       page.should have_content("Year is not a number")
