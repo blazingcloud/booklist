@@ -25,7 +25,6 @@ describe BooksController do
     end
 
     it "should have a link to create a new book" do
-      pending
       visit root_path
       click_link "New Book"
       current_path.should == new_book_path
@@ -34,7 +33,6 @@ describe BooksController do
 
   describe "show page" do
     it "should display all the info about the book" do
-      pending
       @book = Book.first
       visit book_path(@book)
       page.should have_content(@book.title)
@@ -45,7 +43,6 @@ describe BooksController do
   end
 
   describe "new page" do
-    pending
     describe "should allow creation of a book" do
       before do
         visit new_book_path
@@ -78,7 +75,6 @@ describe BooksController do
   end
   
   describe "edit page" do
-    pending
     describe "should allow use to edit book" do
       before do
         @book = Book.first
@@ -88,9 +84,11 @@ describe BooksController do
         @book.reload
       end
       it "and save it" do
+        pending
         @book.year.should == 1900
       end
       it "and show book page" do
+        pending
         current_path.should == book_path(@book)
         page.should have_content("1900")
       end
